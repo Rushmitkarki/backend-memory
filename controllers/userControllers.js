@@ -98,7 +98,7 @@ const loginUser = async (req, res) => {
       message: "Login successful...",
       token: token,
       userData: {
-        id:user._id,
+        id: user._id,
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
@@ -357,7 +357,7 @@ const updateUserProfile = async (req, res) => {
   const { firstName, lastName, email, phone, image } = req.body;
   const id = req.user.id;
 
-  if (!firstName || !lastName || !email || !phone || !image) {
+  if (!firstName || !lastName || !email || !phone) {
     return res.status(400).json({
       success: false,
       message: "Please enter all required fields",
